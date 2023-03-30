@@ -1,4 +1,4 @@
-class Other {
+class Media {
     constructor(x,y,width,height) {
         this.x = x;
         this.y = y;
@@ -14,5 +14,13 @@ class Other {
             this.ctx.drawImage(img, this.x, this.y, this.width, this.height);
         }
         img.src = './image/start.png'
+    }
+
+    drawEnd() {
+        let img = new Image();
+        img.onload = () => {
+            this.ctx.drawImage(img, this.x, this.y, this.width, this.height);
+        }
+        img.src = './image/end.png'
     }
 }

@@ -1,4 +1,6 @@
+
 class Cactus {
+
     constructor(x, y, width, height) {
         this.canvas = document.getElementById('game');
         this.x = x;
@@ -36,11 +38,11 @@ class Cactus {
             case 4:
                 this.speed = 10;
         }
-        if (this.score > 500 && this.score < 1000) {
+        if (this.score > 500 && this.score <= 1000) {
             this.level = 2;
-        } else if (this.score >= 1000 && this.score < 3000) {
+        } else if (this.score > 1000 && this.score <= 3000) {
             this.level = 3;
-        } else if (this.score >= 3000) {
+        } else if (this.score > 3000) {
             this.level = 4;
         }
     }
@@ -55,8 +57,13 @@ class Cactus {
             this.drawScore();
         }
         this.x -= this.speed;
-        console.log(this.speed)
         this.draw();
+    }
+
+    stop(dino) {
+        this.speed = 0;
+        this.draw();
+        dino.draw();
     }
 
     resetScore() {
@@ -65,4 +72,5 @@ class Cactus {
         this.ctx.clearRect(0, 0, 150, 40);
         cactus.drawScore();
     }
+
 }

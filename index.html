@@ -3,14 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>DinoGame</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<canvas id="game" width="800px" height="500px" style="border: 3px solid black"></canvas>
-<img src="image/cactus.png" height="160" id="cactus" hidden width="160" /></body>
-<audio></audio>
+<div class="container">
+    <div class="gameplay">
+        <canvas id="game" width="800px" height="500px" style="border: 3px solid black"></canvas>
+        <img src="image/dino.png" width="50" height="50" id="dino" hidden/>
+        <img src="image/cactus.png" width="50" height="50" id="cactus" hidden/>
+    </div>
+    <div class="describe">
+        <div class="content">
+            <img class="image" src="image/enter.png" alt="Phím Enter">
+            <span class="text_content">: Start Game</span>
+        </div>
+        <div class="content">
+            <img class="image" src="image/space.png" alt="Phím Space">
+            <span class="text_content">: Jump</span>
+        </div>
+        <div class="content">
+            <img class="image" src="image/shift.png" alt="Phím Shift">
+            <span class="text_content">: Reset Game</span>
+        </div>
+    </div>
+</div>
+<audio id="introAudio" hidden autoplay> <source src="audio/intro.mp3" ></audio>
+<audio id="endAudio" hidden> <source src="audio/end.mp3" ></audio>
+<audio id="jumpAudio" hidden> <source src="audio/jump.mp3" ></audio>
+</body>
 </html>
 <script src="js/Dino.js"></script>
 <script src="js/Cactus.js"></script>
 <script src="js/Ground.js"></script>
-<script src="js/Other.js"></script>
+<script src="js/Media.js"></script>
 <script src="js/Main.js"></script>
